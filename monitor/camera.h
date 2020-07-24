@@ -17,7 +17,7 @@ class Camera
 public:
     Camera(char *DEV_NAME,int w,int h, int camer_type);
     ~Camera();
-    bool OpenDevice();//
+    bool OpenDevice(bool log = false);//
     void CloseDevice();
     bool GetBuffer(unsigned char *image);//
     unsigned int getImageSize();
@@ -35,6 +35,7 @@ private:
     struct buffer * buffers ;
     unsigned int n_buffers ;
     unsigned int cap_image_size ;//to keep the real image size!!
+    bool _log;
 
     bool init_device(void);
     //void init_read(unsigned int buffer_size);

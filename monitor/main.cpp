@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "dialog_login.h"
 
 #include <QApplication>
 

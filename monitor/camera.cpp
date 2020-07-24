@@ -75,8 +75,9 @@ unsigned int Camera::getImageSize()
     return cap_image_size;
 }
 
-bool Camera::OpenDevice()
+bool Camera::OpenDevice(bool log)
 {
+    _log = log;
     if (open_device()) {
         printf("open success\n");
         if (init_device()) {
@@ -156,9 +157,9 @@ int Camera::read_frame(unsigned char *image) {
             errno_exit("VIDIOC_DQBUF");
         }
     }
-	printf("************** %s, line = %d\n", __FUNCTION__, __LINE__);
+    if (_log) printf("************** %s, line = %d\n", __FUNCTION__, __LINE__);
     assert(buf.index < n_buffers);
-	printf("************** %s, line = %d\n", __FUNCTION__, __LINE__);
+    if (_log) printf("************** %s, line = %d\n", __FUNCTION__, __LINE__);
     memcpy(image,buffers[0].start,cap_image_size);
     if (-1 == xioctl(fd, VIDIOC_QBUF, &buf))
         errno_exit("VIDIOC_QBUF");

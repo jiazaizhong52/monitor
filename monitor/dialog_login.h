@@ -12,7 +12,7 @@ class Dialog_Login : public QDialog
     Q_OBJECT
 
 public:
-    explicit Dialog_Login(QWidget *parent = nullptr);
+    explicit Dialog_Login(QWidget *parent = NULL);
     ~Dialog_Login();
 
 private:

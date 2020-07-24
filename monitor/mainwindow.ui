@@ -6,16 +6,82 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>480</width>
+    <height>270</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>420</width>
+      <height>240</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page"/>
+    <widget class="QWidget" name="page_2"/>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>480</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuview">
+    <property name="title">
+     <string>view</string>
+    </property>
+    <addaction name="actionview_resistance"/>
+    <addaction name="actionview_resistancePlot"/>
+    <addaction name="actionview_camera"/>
+    <addaction name="actionview_photoList"/>
+   </widget>
+   <widget class="QMenu" name="menulogin">
+    <property name="title">
+     <string>login</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menusettings">
+    <property name="title">
+     <string>settings</string>
+    </property>
+   </widget>
+   <addaction name="menulogin"/>
+   <addaction name="menuview"/>
+   <addaction name="menusettings"/>
+  </widget>
+  <action name="actionview_resistance">
+   <property name="text">
+    <string>view resistance</string>
+   </property>
+  </action>
+  <action name="actionview_camera">
+   <property name="text">
+    <string>view camera</string>
+   </property>
+  </action>
+  <action name="actionview_photoList">
+   <property name="text">
+    <string>view photoList</string>
+   </property>
+  </action>
+  <action name="actionview_resistancePlot">
+   <property name="text">
+    <string>view resistancePlot</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
