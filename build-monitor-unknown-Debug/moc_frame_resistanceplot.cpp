@@ -22,26 +22,33 @@ static const uint qt_meta_data_Frame_ResistancePlot[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
+ // slots: signature, parameters, type, tag, flags
+      24,   22,   21,   21, 0x08,
+
        0        // eod
 };
 
 static const char qt_meta_stringdata_Frame_ResistancePlot[] = {
-    "Frame_ResistancePlot\0"
+    "Frame_ResistancePlot\0\0R\0on_resistance_addR(int)\0"
 };
 
 void Frame_ResistancePlot::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
-    Q_UNUSED(_a);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        Frame_ResistancePlot *_t = static_cast<Frame_ResistancePlot *>(_o);
+        switch (_id) {
+        case 0: _t->on_resistance_addR((*reinterpret_cast< int(*)>(_a[1]))); break;
+        default: ;
+        }
+    }
 }
 
 const QMetaObjectExtraData Frame_ResistancePlot::staticMetaObjectExtraData = {
@@ -75,6 +82,11 @@ int Frame_ResistancePlot::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QFrame::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    }
     return _id;
 }
 QT_END_MOC_NAMESPACE

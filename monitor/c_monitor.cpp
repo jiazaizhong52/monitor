@@ -16,6 +16,8 @@ C_Monitor::C_Monitor()
 void* C_Monitor::catchthread(void* arg)
 {
     C_Monitor &monitor = *(C_Monitor*)arg;
+    while (monitor.occupied);
+    monitor.occupied = true;
     if (!monitor.camera.OpenDevice())
     {
         cout << "open camera error!" << endl;
@@ -26,6 +28,7 @@ void* C_Monitor::catchthread(void* arg)
     {
         monitor.status = ACTIVE;
     }
+    monitor.occupied = false;
 
     while (true)
     {
@@ -39,7 +42,7 @@ void* C_Monitor::catchthread(void* arg)
             cout << "get buffer error" << endl;
         monitor.occupied = false;
 
-        monitor.camera.process_image(monitor.yuyv, monitor.rgb);
+        monitor.camera.process_image2(monitor.yuyv, monitor.rgb);
         memcpy(monitor.buffer, monitor.rgb, monitor.getSize());
         if (monitor._log) cout << "image processed successfully" << endl;
     }

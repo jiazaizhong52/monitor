@@ -20,6 +20,7 @@ private:
     Ui::Frame_Camera *ui;
     QImage m_img;
     Monitor &monitor;
+    bool m_CameraIsOpened;
 
 public:
 

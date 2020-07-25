@@ -14,7 +14,7 @@ class Frame_PhotoList : public QFrame
     Q_OBJECT
 
 public:
-    explicit Frame_PhotoList(Monitor &monitor, QWidget *parent = nullptr);
+    explicit Frame_PhotoList(Monitor &monitor, QWidget *parent = NULL);
     ~Frame_PhotoList();
 
 private:

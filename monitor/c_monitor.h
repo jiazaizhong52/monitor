@@ -15,8 +15,8 @@ public:
     C_Monitor();
 public:
     enum Status{ ACTIVE, SLEEP, CLOSE };
-    static const int H = 640;
-    static const int W = 480;
+    static const int H = 480;
+    static const int W = 640;
     static unsigned int getSize()
     {
         return H * W * 3;
@@ -26,7 +26,7 @@ private:
     Camera camera;
     bool _log;
     bool occupied;
-    unsigned char yuyv[W*H*4];
+    unsigned char yuyv[W*H*2];
     unsigned char rgb[W*H*3];
     unsigned char buffer[W*H*3];
 

@@ -23,6 +23,10 @@ private:
 public:
 
     void updataData();
+
+signals:
+    void addR(int R);
+
 };
 
 #endif // FRAME_RESISTANCE_H

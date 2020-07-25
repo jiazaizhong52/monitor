@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -34,6 +34,11 @@ static const uint qt_meta_data_MainWindow[] = {
       49,   11,   11,   11, 0x08,
       68,   11,   11,   11, 0x08,
      101,   11,   11,   11, 0x08,
+     137,   11,   11,   11, 0x08,
+     178,   11,   11,   11, 0x08,
+     204,   11,   11,   11, 0x08,
+     234,   11,   11,   11, 0x08,
+     274,  261,   11,   11, 0x08,
 
        0        // eod
 };
@@ -42,6 +47,11 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "MainWindow\0\0on_actionview_resistance_triggered()\0"
     "on_timer_timeOut()\0on_actionview_camera_triggered()\0"
     "on_actionview_photoList_triggered()\0"
+    "on_actionview_resistancePlot_triggered()\0"
+    "on_actionexit_triggered()\0"
+    "on_actionsettings_triggered()\0"
+    "on_actionlogin_triggered()\0userName,key\0"
+    "on_login_login(string,string)\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -54,10 +64,14 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_timer_timeOut(); break;
         case 2: _t->on_actionview_camera_triggered(); break;
         case 3: _t->on_actionview_photoList_triggered(); break;
+        case 4: _t->on_actionview_resistancePlot_triggered(); break;
+        case 5: _t->on_actionexit_triggered(); break;
+        case 6: _t->on_actionsettings_triggered(); break;
+        case 7: _t->on_actionlogin_triggered(); break;
+        case 8: _t->on_login_login((*reinterpret_cast< string(*)>(_a[1])),(*reinterpret_cast< string(*)>(_a[2]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObjectExtraData MainWindow::staticMetaObjectExtraData = {
@@ -92,9 +106,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 9;
     }
     return _id;
 }

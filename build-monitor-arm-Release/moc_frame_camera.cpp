@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'frame_camera.h'
 **
-** Created: Fri Jul 24 20:53:36 2020
+** Created: Sat Jul 25 13:38:33 2020
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.1)
 **
 ** WARNING! All changes made in this file will be lost!

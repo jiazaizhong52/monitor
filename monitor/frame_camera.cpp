@@ -5,9 +5,12 @@
 Frame_Camera::Frame_Camera(Monitor &monitor, QWidget *parent) :
     QFrame(parent),
     ui(new Ui::Frame_Camera),
-    monitor(monitor)
+    monitor(monitor),
+    m_CameraIsOpened(true)
 {
     ui->setupUi(this);
+    ui->buttom_camera->setText("Close Camera");
+    ui->buttom_photo->setEnabled(true);
 }
 
 Frame_Camera::~Frame_Camera()
@@ -17,14 +20,16 @@ Frame_Camera::~Frame_Camera()
 
 void Frame_Camera::updataData()
 {
+    if (!m_CameraIsOpened || monitor.getC_Status() == C_Monitor::CLOSE)
+        return;
     m_img = QImage(monitor.getPhoto(), monitor.cm.W, monitor.cm.H, QImage::Format_RGB888);
     ui->label_photo->setPixmap(QPixmap::fromImage(m_img));
-    cout << "update photo, status = " << monitor.cm.status2str(monitor.getC_Status()) << endl;
+    // cout << "update photo, status = " << monitor.cm.status2str(monitor.getC_Status()) << endl;
 }
 
 void Frame_Camera::on_buttom_camera_clicked()
 {
-    if (monitor.getC_Status() != monitor.cm.CLOSE)
+    if (m_CameraIsOpened)
     {
         // close camera
         // ...
@@ -34,6 +39,8 @@ void Frame_Camera::on_buttom_camera_clicked()
         ui->label_photo->setText("Click \'Open Camera\' to view photo.");
         ui->buttom_camera->setText("Open Camera");
         ui->buttom_photo->setEnabled(false);
+
+        m_CameraIsOpened = false;
 
     }
     else
@@ -45,6 +52,8 @@ void Frame_Camera::on_buttom_camera_clicked()
         cout << "open camera" << endl;
         ui->buttom_camera->setText("Close Camera");
         ui->buttom_photo->setEnabled(true);
+
+        m_CameraIsOpened = true;
 
     }
 }

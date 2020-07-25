@@ -22,26 +22,33 @@ static const uint qt_meta_data_Frame_Resistance[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+      20,   18,   17,   17, 0x05,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Frame_Resistance[] = {
-    "Frame_Resistance\0"
+    "Frame_Resistance\0\0R\0addR(int)\0"
 };
 
 void Frame_Resistance::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
-    Q_UNUSED(_a);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        Frame_Resistance *_t = static_cast<Frame_Resistance *>(_o);
+        switch (_id) {
+        case 0: _t->addR((*reinterpret_cast< int(*)>(_a[1]))); break;
+        default: ;
+        }
+    }
 }
 
 const QMetaObjectExtraData Frame_Resistance::staticMetaObjectExtraData = {
@@ -75,6 +82,18 @@ int Frame_Resistance::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QFrame::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    }
     return _id;
+}
+
+// SIGNAL 0
+void Frame_Resistance::addR(int _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_END_MOC_NAMESPACE

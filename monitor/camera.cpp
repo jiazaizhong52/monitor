@@ -78,6 +78,7 @@ unsigned int Camera::getImageSize()
 bool Camera::OpenDevice(bool log)
 {
     _log = log;
+    init_table();
     if (open_device()) {
         printf("open success\n");
         if (init_device()) {
@@ -109,16 +110,62 @@ bool Camera::process_image(unsigned char *imageSrc,unsigned char * imageDst)
     // TODO:fill this function.
     YUYV *src = (YUYV*)imageSrc;
     RGB  *dst = (RGB*) imageDst;
+    int j = 0;
+    float Value = 0;
     int size_src = height * width / 2;
     for (int i = 0; i < size_src; ++i)
     {
-        int j = 2 * i;
-        dst[j].R = 1.164*(src[i].Y1-16) + 1.159*(src[i].V-128);
-        dst[j].G = 1.164*(src[i].Y1-16)- 0.380*(src[i].U-128)+ 0.813*(src[i].V-128);
-        dst[j].B = 1.164*(src[i].Y1-16) + 2.018*(src[i].U-128);
-        dst[j+1].R = 1.164*(src[i].Y2-16) + 1.159*(src[i].V-128);
-        dst[j+1].G = 1.164*(src[i].Y2-16)- 0.380*(src[i].U-128)+ 0.813*(src[i].V-128);
-        dst[j+1].B = 1.164*(src[i].Y2-16) + 2.018*(src[i].U-128);
+        j = 2 * i;
+        Value = 1.164*(src[i].Y1-16);
+        dst[j].R = Value + 1.159*(src[i].V-128);
+        dst[j].G = Value - 0.380*(src[i].U-128) + 0.813*(src[i].V-128);
+        dst[j].B = Value + 2.018*(src[i].U-128);
+        Value = 1.164*(src[i].Y2-16);
+        dst[j+1].R = Value + 1.159*(src[i].V-128);
+        dst[j+1].G = Value - 0.380*(src[i].U-128) + 0.813*(src[i].V-128);
+        dst[j+1].B = Value + 2.018*(src[i].U-128);
+    }
+}
+
+bool Camera::process_image2(unsigned char *imageSrc,unsigned char * imageDst)
+{
+    // TODO:fill this function.
+    YUYV *src = (YUYV*)imageSrc;
+    RGB  *dst = (RGB*) imageDst;
+    int j = 0;
+    int Value = 0;
+    int size_src = height * width / 2;
+    int r, g, b;
+    for (int i = 0; i < size_src; ++i)
+    {
+        j = 2 * i;
+        Value = fac_1_164[src[i].Y1];
+        r = Value + fac_1_159[src[i].V];
+        if (r < 0) r = 0;
+        if (r > 255) r = 255;
+        dst[j].R = r;
+        g = Value - fac_0_380[src[i].U] + fac_0_813[src[i].V];
+        if (g < 0) g = 0;
+        if (g > 255) g = 255;
+        dst[j].G = g;
+        b = Value + fac_2_018[src[i].U];
+        if (b < 0) b = 0;
+        if (b > 255) b = 255;
+        dst[j].B = b;
+
+        Value = fac_1_164[src[i].Y2];
+        r = Value + fac_1_159[src[i].V];
+        if (r < 0) r = 0;
+        if (r > 255) r = 255;
+        dst[j+1].R = r;
+        g = Value - fac_0_380[src[i].U] + fac_0_813[src[i].V];
+        if (g < 0) g = 0;
+        if (g > 255) g = 255;
+        dst[j+1].G = g;
+        b = Value + fac_2_018[src[i].U];
+        if (b < 0) b = 0;
+        if (b > 255) b = 255;
+        dst[j+1].B = b;
     }
 }
 

@@ -22,6 +22,7 @@ public:
     bool GetBuffer(unsigned char *image);//
     unsigned int getImageSize();
     bool process_image(unsigned char *imageSrc,unsigned char * imageDst);
+    bool process_image2(unsigned char *imageSrc,unsigned char * imageDst);
     //this func only convert YUV422 to RGB888
 
 
@@ -37,6 +38,23 @@ private:
     unsigned int cap_image_size ;//to keep the real image size!!
     bool _log;
 
+    int fac_1_164[256];
+    int fac_1_159[256];
+    int fac_0_380[256];
+    int fac_0_813[256];
+    int fac_2_018[256];
+
+    void init_table()
+    {
+        for (int i = 0; i < 256; ++i)
+        {
+            fac_1_164[i] = 1.164*(i-16);
+            fac_1_159[i] = 1.159*(i-128);
+            fac_0_380[i] = 0.380*(i-128);
+            fac_0_813[i] = 0.813*(i-128);
+            fac_2_018[i] = 2.018*(i-128);
+        }
+    }
     bool init_device(void);
     //void init_read(unsigned int buffer_size);
     bool init_mmap(void);

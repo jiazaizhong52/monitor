@@ -12,6 +12,9 @@ public:
     R_Monitor rm;
     C_Monitor cm;
 
+private:
+    int interval;
+
 public:
 
     int start();
@@ -29,6 +32,12 @@ public:
     float getR() { return rm.getR(); }
 
     R_Monitor::Status getR_Status() { return rm.getStatus(); }
+
+    void setFPS(float fps) { interval = 1000/fps; }
+
+    int getInterval() { return interval; }
+
+
 
 };
 

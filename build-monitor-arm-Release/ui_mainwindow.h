@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Jul 24 15:31:32 2020
+** Created: Sat Jul 25 08:13:01 2020
 **      by: Qt User Interface Compiler version 4.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -28,14 +28,18 @@ class Ui_MainWindow
 public:
     QAction *actionview_resistance;
     QAction *actionview_camera;
+    QAction *actionview_photoList;
+    QAction *actionview_resistancePlot;
+    QAction *actionlogin;
+    QAction *actionsettings;
+    QAction *actionexit;
     QWidget *centralwidget;
     QStackedWidget *stackedWidget;
     QWidget *page;
     QWidget *page_2;
     QMenuBar *menuBar;
     QMenu *menuview;
-    QMenu *menulogin;
-    QMenu *menusettings;
+    QMenu *menumain;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -46,6 +50,16 @@ public:
         actionview_resistance->setObjectName(QString::fromUtf8("actionview_resistance"));
         actionview_camera = new QAction(MainWindow);
         actionview_camera->setObjectName(QString::fromUtf8("actionview_camera"));
+        actionview_photoList = new QAction(MainWindow);
+        actionview_photoList->setObjectName(QString::fromUtf8("actionview_photoList"));
+        actionview_resistancePlot = new QAction(MainWindow);
+        actionview_resistancePlot->setObjectName(QString::fromUtf8("actionview_resistancePlot"));
+        actionlogin = new QAction(MainWindow);
+        actionlogin->setObjectName(QString::fromUtf8("actionlogin"));
+        actionsettings = new QAction(MainWindow);
+        actionsettings->setObjectName(QString::fromUtf8("actionsettings"));
+        actionexit = new QAction(MainWindow);
+        actionexit->setObjectName(QString::fromUtf8("actionexit"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         stackedWidget = new QStackedWidget(centralwidget);
@@ -63,17 +77,21 @@ public:
         menuBar->setGeometry(QRect(0, 0, 480, 28));
         menuview = new QMenu(menuBar);
         menuview->setObjectName(QString::fromUtf8("menuview"));
-        menulogin = new QMenu(menuBar);
-        menulogin->setObjectName(QString::fromUtf8("menulogin"));
-        menusettings = new QMenu(menuBar);
-        menusettings->setObjectName(QString::fromUtf8("menusettings"));
+        menumain = new QMenu(menuBar);
+        menumain->setObjectName(QString::fromUtf8("menumain"));
         MainWindow->setMenuBar(menuBar);
 
-        menuBar->addAction(menulogin->menuAction());
+        menuBar->addAction(menumain->menuAction());
         menuBar->addAction(menuview->menuAction());
-        menuBar->addAction(menusettings->menuAction());
         menuview->addAction(actionview_resistance);
+        menuview->addAction(actionview_resistancePlot);
         menuview->addAction(actionview_camera);
+        menuview->addAction(actionview_photoList);
+        menumain->addAction(actionlogin);
+        menumain->addSeparator();
+        menumain->addAction(actionsettings);
+        menumain->addSeparator();
+        menumain->addAction(actionexit);
 
         retranslateUi(MainWindow);
 
@@ -88,9 +106,13 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0, QApplication::UnicodeUTF8));
         actionview_resistance->setText(QApplication::translate("MainWindow", "view resistance", 0, QApplication::UnicodeUTF8));
         actionview_camera->setText(QApplication::translate("MainWindow", "view camera", 0, QApplication::UnicodeUTF8));
+        actionview_photoList->setText(QApplication::translate("MainWindow", "view photoList", 0, QApplication::UnicodeUTF8));
+        actionview_resistancePlot->setText(QApplication::translate("MainWindow", "view resistancePlot", 0, QApplication::UnicodeUTF8));
+        actionlogin->setText(QApplication::translate("MainWindow", "login", 0, QApplication::UnicodeUTF8));
+        actionsettings->setText(QApplication::translate("MainWindow", "settings", 0, QApplication::UnicodeUTF8));
+        actionexit->setText(QApplication::translate("MainWindow", "exit", 0, QApplication::UnicodeUTF8));
         menuview->setTitle(QApplication::translate("MainWindow", "view", 0, QApplication::UnicodeUTF8));
-        menulogin->setTitle(QApplication::translate("MainWindow", "login", 0, QApplication::UnicodeUTF8));
-        menusettings->setTitle(QApplication::translate("MainWindow", "settings", 0, QApplication::UnicodeUTF8));
+        menumain->setTitle(QApplication::translate("MainWindow", "main", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

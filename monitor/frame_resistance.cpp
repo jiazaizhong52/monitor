@@ -25,4 +25,5 @@ void Frame_Resistance::updataData()
     ui->label_resistance->setText(QString(str));
     ui->label_status->setText(QString(status.c_str()));
     ui->textBrowser->append("R = " + QString(str) + ", Status = " + status.c_str());
+    emit addR(R);
 }

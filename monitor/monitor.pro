@@ -1,4 +1,4 @@
-QT       += core gui charts
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,34 +19,41 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     c_monitor.cpp \
     camera.cpp \
-    dialog_login.cpp \
+    client_mqtt.cpp \
     frame_camera.cpp \
+    frame_login.cpp \
     frame_photolist.cpp \
     frame_resistance.cpp \
     frame_resistanceplot.cpp \
+    frame_settings.cpp \
     main.cpp \
     mainwindow.cpp \
     monitor.cpp \
+    network_mqtt.cpp \
     r_monitor.cpp
 
 HEADERS += \
     c_monitor.h \
     camera.h \
-    dialog_login.h \
+    client_mqtt.h \
     frame_camera.h \
+    frame_login.h \
     frame_photolist.h \
     frame_resistance.h \
     frame_resistanceplot.h \
+    frame_settings.h \
     mainwindow.h \
     monitor.h \
+    network_mqtt.h \
     r_monitor.h
 
 FORMS += \
-    dialog_login.ui \
     frame_camera.ui \
+    frame_login.ui \
     frame_photolist.ui \
     frame_resistance.ui \
     frame_resistanceplot.ui \
+    frame_settings.ui \
     mainwindow.ui
 
 # Default rules for deployment.
@@ -61,12 +68,12 @@ LIBS += \
 #    /home/louding/software/paho_linux/libpaho-mqtt3c.so \
 #    /home/louding/software/paho_linux/libpaho-mqtt3cs.so
 # \
-#    /home/louding/software/paho_arm/libpaho-mqtt3a.so \
-#    /home/louding/software/paho_arm/libpaho-mqtt3as.so \
-#    /home/louding/software/paho_arm/libpaho-mqtt3c.so \
-#    /home/louding/software/paho_arm/libpaho-mqtt3cs.so \
-#    /home/louding/software/openssl_arm/lib/libssl.so \
-#    /home/louding/software/openssl_arm/lib/libcrypto.so
+    /home/louding/software/paho_arm/libpaho-mqtt3a.so \
+    /home/louding/software/paho_arm/libpaho-mqtt3as.so \
+    /home/louding/software/paho_arm/libpaho-mqtt3c.so \
+    /home/louding/software/paho_arm/libpaho-mqtt3cs.so \
+    /home/louding/software/openssl_arm/lib/libssl.so \
+    /home/louding/software/openssl_arm/lib/libcrypto.so
 
 INCLUDEPATH += /home/louding/software/paho.mqtt.c-1.3.2-arm/src \
     /home/louding/software/openssl_arm/include
