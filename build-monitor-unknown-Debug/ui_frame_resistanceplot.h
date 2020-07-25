@@ -32,7 +32,7 @@ public:
         Frame_ResistancePlot->resize(420, 240);
         label_photo = new QLabel(Frame_ResistancePlot);
         label_photo->setObjectName(QString::fromUtf8("label_photo"));
-        label_photo->setGeometry(QRect(20, 40, 380, 180));
+        label_photo->setGeometry(QRect(20, 50, 380, 180));
         label_photo->setFrameShape(QFrame::StyledPanel);
         label_photo->setAlignment(Qt::AlignCenter);
         label = new QLabel(Frame_ResistancePlot);

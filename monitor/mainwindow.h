@@ -55,5 +55,6 @@ private slots:
     void on_actionsettings_triggered();
     void on_actionlogin_triggered();
     void on_login_login(string userName, string key);
+    void on_login_logout();
 };
 #endif // MAINWINDOW_H

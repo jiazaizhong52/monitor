@@ -63,17 +63,22 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 
 LIBS += \
-#    /home/louding/software/paho_linux/libpaho-mqtt3a.so \
-#    /home/louding/software/paho_linux/libpaho-mqtt3as.so \
-#    /home/louding/software/paho_linux/libpaho-mqtt3c.so \
-#    /home/louding/software/paho_linux/libpaho-mqtt3cs.so
+    /home/louding/software/paho_linux/libpaho-mqtt3a.so \
+    /home/louding/software/paho_linux/libpaho-mqtt3as.so \
+    /home/louding/software/paho_linux/libpaho-mqtt3c.so \
+    /home/louding/software/paho_linux/libpaho-mqtt3cs.so
 # \
-    /home/louding/software/paho_arm/libpaho-mqtt3a.so \
-    /home/louding/software/paho_arm/libpaho-mqtt3as.so \
-    /home/louding/software/paho_arm/libpaho-mqtt3c.so \
-    /home/louding/software/paho_arm/libpaho-mqtt3cs.so \
-    /home/louding/software/openssl_arm/lib/libssl.so \
-    /home/louding/software/openssl_arm/lib/libcrypto.so
+#    /home/louding/software/paho_arm/libpaho-mqtt3a.so \
+#    /home/louding/software/paho_arm/libpaho-mqtt3as.so \
+#    /home/louding/software/paho_arm/libpaho-mqtt3c.so \
+#    /home/louding/software/paho_arm/libpaho-mqtt3cs.so \
+#    /home/louding/software/openssl_arm/lib/libssl.so \
+#    /home/louding/software/openssl_arm/lib/libcrypto.so
 
 INCLUDEPATH += /home/louding/software/paho.mqtt.c-1.3.2-arm/src \
     /home/louding/software/openssl_arm/include
+
+DISTFILES +=
+
+RESOURCES += \
+    resource.qrc

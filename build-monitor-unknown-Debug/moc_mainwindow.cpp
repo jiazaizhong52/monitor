@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -39,6 +39,7 @@ static const uint qt_meta_data_MainWindow[] = {
      204,   11,   11,   11, 0x08,
      234,   11,   11,   11, 0x08,
      274,  261,   11,   11, 0x08,
+     304,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -52,6 +53,7 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_actionsettings_triggered()\0"
     "on_actionlogin_triggered()\0userName,key\0"
     "on_login_login(string,string)\0"
+    "on_login_logout()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -69,6 +71,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->on_actionsettings_triggered(); break;
         case 7: _t->on_actionlogin_triggered(); break;
         case 8: _t->on_login_login((*reinterpret_cast< string(*)>(_a[1])),(*reinterpret_cast< string(*)>(_a[2]))); break;
+        case 9: _t->on_login_logout(); break;
         default: ;
         }
     }
@@ -106,9 +109,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

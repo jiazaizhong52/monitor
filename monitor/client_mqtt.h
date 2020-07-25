@@ -19,13 +19,30 @@ private:
     unsigned char* photo;
     int Interval;
 
+    bool flag_feedbackR;
+    bool flag_feedbackPhoto;
+
+    static void recvInterval(void * arg, const string &topic, MQTTAsync_message *msg);
+    static void recvFeedbackR(void * arg, const string &topic, MQTTAsync_message *msg)
+    {
+        Client_MQTT &client = *(Client_MQTT*)arg;
+        client.flag_feedbackR = true;
+        cout << "recieved feedback R" << endl;
+    }
+    static void recvFeedbackPhoto(void * arg, const string &topic, MQTTAsync_message *msg)
+    {
+        Client_MQTT &client = *(Client_MQTT*)arg;
+        client.flag_feedbackPhoto = true;
+        cout << "recieved feedback Photo" << endl;
+    }
+
 
 public:
     bool connect(const string &user_name, const string &password);
+    bool disConnect();
     void sendR();
     void sendPhoto();
     void sendInterval();
-    static void recvInterval(void * arg, const string &topic, MQTTAsync_message *msg);
     Status getStatus() { return net.getStatus(); }
 };
 

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'frame_resistanceplot.h'
 **
-** Created: Sat Jul 25 13:38:33 2020
+** Created: Sat Jul 25 17:28:36 2020
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.1)
 **
 ** WARNING! All changes made in this file will be lost!

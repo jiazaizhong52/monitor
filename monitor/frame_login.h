@@ -40,14 +40,21 @@ private slots:
 
     void on_buttom0_clicked();
 
+    void on_buttom_back_clicked();
+
 private:
     Ui::Frame_Login *ui;
     Monitor &monitor;
+    bool connectionOn;
     void input(char num);
+    void backspace();
 
+public:
+    void updateData();
+    void setConnectionStatus(bool on) { connectionOn = on; }
 signals:
     void login(string userName, string key);
-
+    void logout();
 };
 
 #endif // FRAME_LOGIN_H

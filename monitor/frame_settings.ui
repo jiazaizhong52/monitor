@@ -16,10 +16,10 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>110</y>
-     <width>151</width>
-     <height>111</height>
+     <x>220</x>
+     <y>130</y>
+     <width>171</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -31,9 +31,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>10</y>
-      <width>101</width>
+      <width>41</width>
       <height>31</height>
      </rect>
     </property>
@@ -44,9 +44,9 @@
    <widget class="QSlider" name="horizontalSlider">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>101</width>
+      <x>30</x>
+      <y>30</y>
+      <width>111</width>
       <height>31</height>
      </rect>
     </property>
@@ -69,8 +69,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>80</y>
+      <x>30</x>
+      <y>60</y>
       <width>31</width>
       <height>17</height>
      </rect>
@@ -82,8 +82,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>80</y>
+      <x>130</x>
+      <y>60</y>
       <width>31</width>
       <height>17</height>
      </rect>
@@ -92,14 +92,27 @@
      <string>10</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_fps">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>10</y>
+      <width>67</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QFrame" name="frame_2">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>220</x>
      <y>40</y>
-     <width>151</width>
-     <height>61</height>
+     <width>171</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -108,13 +121,78 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Latest Feedback:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_feedbackR">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>30</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TimeOut</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_feedbackPhoto">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>54</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TimeOut</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>31</y>
+      <width>71</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Resistance</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>54</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Photo</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QFrame" name="frame_3">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>40</y>
-     <width>211</width>
+     <width>191</width>
      <height>181</height>
     </rect>
    </property>
@@ -124,6 +202,86 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connection:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_connection">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>10</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ON</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>151</width>
+      <height>134</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Host Address: </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_address">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Client ID:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_clientID">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>User Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_userName">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">

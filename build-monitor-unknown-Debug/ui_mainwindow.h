@@ -18,6 +18,7 @@
 #include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
 #include <QtGui/QStackedWidget>
+#include <QtGui/QToolBar>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -39,6 +40,7 @@ public:
     QMenuBar *menuBar;
     QMenu *menuview;
     QMenu *menumain;
+    QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -47,23 +49,44 @@ public:
         MainWindow->resize(480, 270);
         actionview_resistance = new QAction(MainWindow);
         actionview_resistance->setObjectName(QString::fromUtf8("actionview_resistance"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/resistance.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionview_resistance->setIcon(icon);
         actionview_camera = new QAction(MainWindow);
         actionview_camera->setObjectName(QString::fromUtf8("actionview_camera"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/icons/ar-camera.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionview_camera->setIcon(icon1);
         actionview_photoList = new QAction(MainWindow);
         actionview_photoList->setObjectName(QString::fromUtf8("actionview_photoList"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/icons/art.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionview_photoList->setIcon(icon2);
         actionview_resistancePlot = new QAction(MainWindow);
         actionview_resistancePlot->setObjectName(QString::fromUtf8("actionview_resistancePlot"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/icons/plot(1).png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionview_resistancePlot->setIcon(icon3);
         actionlogin = new QAction(MainWindow);
         actionlogin->setObjectName(QString::fromUtf8("actionlogin"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/icons/login.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionlogin->setIcon(icon4);
         actionsettings = new QAction(MainWindow);
         actionsettings->setObjectName(QString::fromUtf8("actionsettings"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/icons/settings.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionsettings->setIcon(icon5);
         actionexit = new QAction(MainWindow);
         actionexit->setObjectName(QString::fromUtf8("actionexit"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/icons/logout.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionexit->setIcon(icon6);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(0, 0, 420, 240));
+        stackedWidget->setGeometry(QRect(10, 0, 420, 240));
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
         stackedWidget->addWidget(page);
@@ -79,6 +102,11 @@ public:
         menumain = new QMenu(menuBar);
         menumain->setObjectName(QString::fromUtf8("menumain"));
         MainWindow->setMenuBar(menuBar);
+        toolBar = new QToolBar(MainWindow);
+        toolBar->setObjectName(QString::fromUtf8("toolBar"));
+        toolBar->setMovable(false);
+        toolBar->setFloatable(true);
+        MainWindow->addToolBar(Qt::RightToolBarArea, toolBar);
 
         menuBar->addAction(menumain->menuAction());
         menuBar->addAction(menuview->menuAction());
@@ -91,6 +119,13 @@ public:
         menumain->addAction(actionsettings);
         menumain->addSeparator();
         menumain->addAction(actionexit);
+        toolBar->addAction(actionview_resistance);
+        toolBar->addAction(actionview_resistancePlot);
+        toolBar->addAction(actionview_camera);
+        toolBar->addAction(actionview_photoList);
+        toolBar->addAction(actionlogin);
+        toolBar->addAction(actionsettings);
+        toolBar->addAction(actionexit);
 
         retranslateUi(MainWindow);
 
@@ -112,6 +147,7 @@ public:
         actionexit->setText(QApplication::translate("MainWindow", "exit", 0, QApplication::UnicodeUTF8));
         menuview->setTitle(QApplication::translate("MainWindow", "view", 0, QApplication::UnicodeUTF8));
         menumain->setTitle(QApplication::translate("MainWindow", "main", 0, QApplication::UnicodeUTF8));
+        toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

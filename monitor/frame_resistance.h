@@ -26,7 +26,9 @@ public:
 
 signals:
     void addR(int R);
-
+    void resistancePlot();
+private slots:
+    void on_buttom_viewPlot_clicked();
 };
 
 #endif // FRAME_RESISTANCE_H

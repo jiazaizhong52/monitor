@@ -27,3 +27,8 @@ void Frame_Resistance::updataData()
     ui->textBrowser->append("R = " + QString(str) + ", Status = " + status.c_str());
     emit addR(R);
 }
+
+void Frame_Resistance::on_buttom_viewPlot_clicked()
+{
+    emit resistancePlot();
+}

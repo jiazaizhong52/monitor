@@ -25,9 +25,20 @@ private:
     Ui::Frame_Settings *ui;
     Monitor &monitor;
     float m;
+    string address;
+    string clientID;
+    string userName;
+    bool connectionOn;
 
 public:
-    void updataData();
+    void updateData();
+    void setConnectionInfo(string address, string clientID, string userName)
+    {
+        this->address = address;
+        this->clientID = clientID;
+        this->userName = userName;
+    }
+    void setConnectionStatus(bool on) { connectionOn = on; }
 };
 
 #endif // FRAME_SETTINGS_H

@@ -17,7 +17,7 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>0</y>
       <width>420</width>
       <height>240</height>
@@ -61,42 +61,96 @@
    <addaction name="menumain"/>
    <addaction name="menuview"/>
   </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionview_resistance"/>
+   <addaction name="actionview_resistancePlot"/>
+   <addaction name="actionview_camera"/>
+   <addaction name="actionview_photoList"/>
+   <addaction name="actionlogin"/>
+   <addaction name="actionsettings"/>
+   <addaction name="actionexit"/>
+  </widget>
   <action name="actionview_resistance">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/resistance.png</normaloff>:/icons/resistance.png</iconset>
+   </property>
    <property name="text">
     <string>view resistance</string>
    </property>
   </action>
   <action name="actionview_camera">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/ar-camera.png</normaloff>:/icons/ar-camera.png</iconset>
+   </property>
    <property name="text">
     <string>view camera</string>
    </property>
   </action>
   <action name="actionview_photoList">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/art.png</normaloff>:/icons/art.png</iconset>
+   </property>
    <property name="text">
     <string>view photoList</string>
    </property>
   </action>
   <action name="actionview_resistancePlot">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/plot(1).png</normaloff>:/icons/plot(1).png</iconset>
+   </property>
    <property name="text">
     <string>view resistancePlot</string>
    </property>
   </action>
   <action name="actionlogin">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/login.png</normaloff>:/icons/login.png</iconset>
+   </property>
    <property name="text">
     <string>login</string>
    </property>
   </action>
   <action name="actionsettings">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/settings.png</normaloff>:/icons/settings.png</iconset>
+   </property>
    <property name="text">
     <string>settings</string>
    </property>
   </action>
   <action name="actionexit">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/logout.png</normaloff>:/icons/logout.png</iconset>
+   </property>
    <property name="text">
     <string>exit</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

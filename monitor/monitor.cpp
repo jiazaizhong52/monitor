@@ -17,7 +17,7 @@ int Monitor::start()
         return -1;
     }
 
-    if (cm.start(true) == -1)
+    if (cm.open(true) == -1)
     {
         cout << "C_Monitor start failed!" << endl;
         return -1;

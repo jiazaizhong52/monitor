@@ -7,7 +7,7 @@
 using namespace std;
 
 #define VideoPath "/dev/video0"
-#define CameraType 0
+#define CameraType 1
 
 class C_Monitor
 {
@@ -34,25 +34,16 @@ private:
 
 public:
 
-    int start(bool log = false);
-
-    int open()
+    int open(bool log = false)
     {
-        while (occupied);
-        occupied = true;
 
         if (status == CLOSE)
         {
-            if (!camera.OpenDevice())
-            {
-                cout << "open camera error!" << endl;
-                camera.CloseDevice();
-                status = CLOSE;
-            }
-            else
-                status = ACTIVE;
+            _log = log;
+            pthread_t ptid;
+            pthread_create(&ptid, NULL, catchthread, this);
         }
-        occupied = false;
+        return 0;
     }
 
     void close()
@@ -85,7 +76,7 @@ public:
         }
     }
 
-
+    bool moveDetect(unsigned char* rgb);
 
 };
 

@@ -19,20 +19,39 @@ void Frame_Login::input(char c)
 {
     if (ui->edit_userName->hasFocus())
     {
-        ui->edit_userName->setText(ui->edit_userName->text() + c);
+        ui->edit_userName->insert(QString(c));
     }
     if (ui->edit_key->hasFocus())
     {
-        ui->edit_key->setText(ui->edit_key->text() + c);
+        ui->edit_key->insert(QString(c));
+    }
+}
+
+void Frame_Login::backspace()
+{
+    if (ui->edit_userName->hasFocus())
+    {
+        ui->edit_userName->backspace();
+    }
+    if (ui->edit_key->hasFocus())
+    {
+        ui->edit_key->backspace();
     }
 }
 
 void Frame_Login::on_buttom_connect_clicked()
 {
-    QString userName = ui->edit_userName->text();
-    QString key = ui->edit_key->text();
-    //TODO:
-    emit login(userName.toStdString(), key.toStdString());
+    if (!connectionOn)
+    {
+        QString userName = ui->edit_userName->text();
+        QString key = ui->edit_key->text();
+        //TODO:
+        emit login(userName.toStdString(), key.toStdString());
+    }
+    else
+    {
+        emit logout();
+    }
 }
 
 void Frame_Login::on_buttom1_clicked()
@@ -83,4 +102,15 @@ void Frame_Login::on_buttom9_clicked()
 void Frame_Login::on_buttom0_clicked()
 {
     input('0');
+}
+
+void Frame_Login::on_buttom_back_clicked()
+{
+    backspace();
+}
+
+void Frame_Login::updateData()
+{
+    ui->label_status->setText(connectionOn ? "ON" : "OFF");
+    ui->buttom_connect->setText(connectionOn ? "log out" : "log in");
 }

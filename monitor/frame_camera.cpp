@@ -24,7 +24,7 @@ void Frame_Camera::updataData()
         return;
     m_img = QImage(monitor.getPhoto(), monitor.cm.W, monitor.cm.H, QImage::Format_RGB888);
     ui->label_photo->setPixmap(QPixmap::fromImage(m_img));
-    // cout << "update photo, status = " << monitor.cm.status2str(monitor.getC_Status()) << endl;
+    cout << "update photo, status = " << monitor.cm.status2str(monitor.getC_Status()) << endl;
 }
 
 void Frame_Camera::on_buttom_camera_clicked()
@@ -65,4 +65,9 @@ void Frame_Camera::on_buttom_photo_clicked()
     m_img.save((str + ".jpg").c_str(), "JPG", -1);
     emit addPhoto(str.c_str());
     cout << "take photo" << endl;
+}
+
+void Frame_Camera::on_buttom_imageList_clicked()
+{
+    emit photoList();
 }

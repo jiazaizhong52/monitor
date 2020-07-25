@@ -17,6 +17,10 @@ private:
 
 public:
 
+    bool feedbackR;
+    bool feedbackPhoto;
+
+
     int start();
 
     //camera

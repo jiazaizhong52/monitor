@@ -30,8 +30,11 @@ private slots:
     void on_buttom_camera_clicked();
     void on_buttom_photo_clicked();
 
+    void on_buttom_imageList_clicked();
+
 signals:
     void addPhoto(QString fileName);
+    void photoList();
 };
 
 #endif // FRAME_CAMERA_H

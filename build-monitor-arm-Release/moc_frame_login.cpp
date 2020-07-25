@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'frame_login.h'
 **
-** Created: Sat Jul 25 14:48:30 2020
+** Created: Sat Jul 25 17:28:36 2020
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_Frame_Login[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -45,6 +45,7 @@ static const uint qt_meta_data_Frame_Login[] = {
      222,   12,   12,   12, 0x08,
      243,   12,   12,   12, 0x08,
      264,   12,   12,   12, 0x08,
+     285,   12,   12,   12, 0x08,
 
        0        // eod
 };
@@ -57,6 +58,7 @@ static const char qt_meta_stringdata_Frame_Login[] = {
     "on_buttom5_clicked()\0on_buttom6_clicked()\0"
     "on_buttom7_clicked()\0on_buttom8_clicked()\0"
     "on_buttom9_clicked()\0on_buttom0_clicked()\0"
+    "on_buttom_back_clicked()\0"
 };
 
 const QMetaObject Frame_Login::staticMetaObject = {
@@ -100,9 +102,10 @@ int Frame_Login::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 9: on_buttom8_clicked(); break;
         case 10: on_buttom9_clicked(); break;
         case 11: on_buttom0_clicked(); break;
+        case 12: on_buttom_back_clicked(); break;
         default: ;
         }
-        _id -= 12;
+        _id -= 13;
     }
     return _id;
 }

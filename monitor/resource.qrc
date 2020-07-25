@@ -1,2 +1,11 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/icons">
+        <file>resistance.png</file>
+        <file>ar-camera.png</file>
+        <file>art.png</file>
+        <file>plot(1).png</file>
+        <file>logout.png</file>
+        <file>login.png</file>
+        <file>settings.png</file>
+    </qresource>
+</RCC>

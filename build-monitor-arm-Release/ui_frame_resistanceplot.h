@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'frame_resistanceplot.ui'
 **
-** Created: Sat Jul 25 00:21:52 2020
+** Created: Sat Jul 25 16:38:56 2020
 **      by: Qt User Interface Compiler version 4.7.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -33,7 +33,7 @@ public:
         Frame_ResistancePlot->resize(420, 240);
         label_photo = new QLabel(Frame_ResistancePlot);
         label_photo->setObjectName(QString::fromUtf8("label_photo"));
-        label_photo->setGeometry(QRect(20, 40, 380, 180));
+        label_photo->setGeometry(QRect(20, 50, 380, 180));
         label_photo->setFrameShape(QFrame::StyledPanel);
         label_photo->setAlignment(Qt::AlignCenter);
         label = new QLabel(Frame_ResistancePlot);

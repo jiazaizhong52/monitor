@@ -38,8 +38,8 @@ bool NetWork_MQTT::connect(const string &user_name, const string &password)
     MQTTAsync_connectOptions conn_opts = MQTTAsync_connectOptions_initializer;
 //    conn_opts.username = qPrintable(user_name);
 //    conn_opts.password = qPrintable(password);
-    conn_opts.username = "lyh";
-    conn_opts.password = "08117114";
+    conn_opts.username = user_name.c_str();
+    conn_opts.password = password.c_str();
     conn_opts.keepAliveInterval = 20;
     conn_opts.cleansession = 1;
     conn_opts.onSuccess = on_connect_success;
@@ -65,7 +65,7 @@ bool NetWork_MQTT::disconnect(MQTTAsync_onSuccess *onDisconnect, MQTTAsync_onFai
     {
         return false;
     }
-    this->state = CLIENT_FINISHED;
+    this->state = CLIENT_INIITIALIZED;
     return true;
 }
 

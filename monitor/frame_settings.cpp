@@ -26,9 +26,24 @@ void Frame_Settings::on_horizontalSlider_valueChanged(int value)
     cout << "set fps = " << fps << endl;
 }
 
-void Frame_Settings::updataData()
+void Frame_Settings::updateData()
 {
     float fps = 1000/(float)monitor.getInterval();
     int value = log(fps-FPS_MIN+1) * 10 / m;
     ui->horizontalSlider->setValue(value);
+    char str[20];
+    sprintf(str, "%.1f", fps);
+
+
+
+
+    ui->label_fps->setText(str);
+    ui->label_address->setText(address.c_str());
+    ui->label_clientID->setText(clientID.c_str());
+    ui->label_userName->setText(userName.c_str());
+    ui->label_connection->setText(connectionOn ? "ON" : "OFF");
+    ui->label_feedbackR->setText(monitor.feedbackR ? "OK" : "TimeOut");
+    ui->label_feedbackPhoto->setText(monitor.feedbackPhoto ? "OK" : "TimeOut");
+
+
 }
