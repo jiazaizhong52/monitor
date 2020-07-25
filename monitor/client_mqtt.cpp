@@ -6,6 +6,20 @@ Client_MQTT::Client_MQTT(Monitor &monitor)
 
 }
 
+bool Client_MQTT::connect(const string &user_name, const string &password)
+{
+    if (!net.setup(ADDRESS, CLIENTID))
+    {
+        return false;
+    }
+    if (!net.connect(user_name, password))
+    {
+        return false;
+    }
+
+
+    return true;
+}
 
 void Client_MQTT::sendR()
 {
@@ -23,6 +37,12 @@ void Client_MQTT::sendInterval()
 {
     Interval = monitor.getInterval();
     cout << "send internal ..." << endl;
-    net.publish("resistance/down", &Interval, sizeof(Interval));
-    net.publish("camera/down", &Interval, sizeof(Interval));
+    net.publish("interval/down", &Interval, sizeof(Interval));
+}
+
+void Client_MQTT::recvInterval(void * arg, const string &topic, MQTTAsync_message *msg)
+{
+    Client_MQTT &client = *(Client_MQTT*)arg;
+    client.Interval = *(int*)msg->payload;
+    client.monitor.setFPS(1000/(float)client.Interval);
 }

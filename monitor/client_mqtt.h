@@ -21,21 +21,11 @@ private:
 
 
 public:
-    bool connect(const string &user_name, const string &password)
-    {
-        if (!net.setup(ADDRESS, CLIENTID))
-        {
-            return false;
-        }
-        if (!net.connect(user_name, password))
-        {
-            return false;
-        }
-        return true;
-    }
+    bool connect(const string &user_name, const string &password);
     void sendR();
     void sendPhoto();
     void sendInterval();
+    static void recvInterval(void * arg, const string &topic, MQTTAsync_message *msg);
     Status getStatus() { return net.getStatus(); }
 };
 
